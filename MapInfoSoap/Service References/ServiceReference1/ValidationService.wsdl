@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WL5G3N1:definitions xmlns:WL5G3N3="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:WL5G3N0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:WL5G3N2="information.qld.gov.au/service/Addressing/ValidationService/PLSplus/soap" xmlns:WL5G3N4="http://schemas.xmlsoap.org/wsdl/soap/" name="ValidationService" targetNamespace="information.qld.gov.au/service/Addressing/ValidationService/PLSplus/soap" xmlns:WL5G3N1="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:UsingPolicy WL5G3N1:Required="true" />
+  <wsp:Policy WL5G3N0:Id="service.land.property.2.wspolicy.UNT.1">
+    <wssp:Identity xmlns:wssp="http://www.bea.com/wls90/security/policy">
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#UsernameToken">
+          <wssp:UsePassword Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText" />
+        </wssp:SecurityToken>
+      </wssp:SupportedTokens>
+    </wssp:Identity>
+  </wsp:Policy>
+  <WL5G3N1:types>
+    <xs:schema xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:tns="information.qld.gov.au/service/Addressing/ValidationService/PLSplus/soap" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:WL5G3N4="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:WL5G3N1="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:WL5G3N5="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:WL5G3N0="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:WL5G3N3="information.qld.gov.au/service/Addressing/ValidationService/PLSplus/soap" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:WL5G3N2="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="information.qld.gov.au/service/Addressing/ValidationService/PLSplus/soap" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="ValidateAddress">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" type="WL5G3N3:ValidateAddressRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:simpleType name="PostalDeliveryTypeAbbreviation">
+        <xsd:restriction base="xsd:string">
+          <xsd:pattern value="[cC][aA][rR][eE] [pP][oO]" />
+          <xsd:pattern value="[cC][aA][rR][eE] [pP][oO] [bB][oO][xX]" />
+          <xsd:pattern value="[cC][mM][aA]" />
+          <xsd:pattern value="[cC][mM][bB]" />
+          <xsd:pattern value="[cC][pP][aA]" />
+          <xsd:pattern value="[gG][pP][oO] [bB][oO][xX]" />
+          <xsd:pattern value="[cC][aA][rR][eE] [gG][pP][oO]" />
+          <xsd:pattern value="[cC][aA][rR][eE] [gG][pP][oO] [bB][oO][xX]" />
+          <xsd:pattern value="[lL][oO][cC][kK][eE][dD] [bB][aA][gG]" />
+          <xsd:pattern value="[mM][sS]" />
+          <xsd:pattern value="[pP][oO] [bB][oO][xX]" />
+          <xsd:pattern value="[pP][rR][iI][vV][aA][tT][eE] [bB][aA][gG]" />
+          <xsd:pattern value="[rR][sS][dD]" />
+          <xsd:pattern value="[rR][mM][sS]" />
+          <xsd:pattern value="[rR][mM][bB]" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ValidateAddressRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="WL5G3N3:Request">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" maxOccurs="1" name="LevelType" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="LevelNumber" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="UnitType" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="UnitNumber" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="BuildingName" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="NumberFirst" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="NumberSuffixFirst" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="NumberLast" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="NumberSuffixLast" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="Road" type="WL5G3N3:RoadName" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="LocalityName" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="LocalGovernmentName" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="StateName" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="PostCode" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Request">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="MeshblockOption" nillable="true" type="WL5G3N3:MeshblockOption" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="MeshblockOption">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Include" />
+          <xsd:enumeration value="Exclude" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="RoadName">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Type" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Suffix" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ValidateAddressResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="ValidateAddressResult" type="WL5G3N3:ValidateAddressResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ValidateAddressResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="WL5G3N3:Response" />
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Response">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="ResultCount" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Results" type="WL5G3N3:ArrayOfResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Result" nillable="true" type="WL5G3N3:Result" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Result">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="PhysicalAddressIndicator" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="MetaData" type="WL5G3N3:MetaData" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Address" type="WL5G3N3:Address" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parcel" type="WL5G3N3:Parcel" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="LocalGovernmentArea" type="WL5G3N3:LocalGovernmentArea" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Geocode" type="WL5G3N3:Geocode" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Aliases" type="WL5G3N3:ArrayOfAddress" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Confidence" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MetaData">
+        <xsd:attribute name="Name" type="xsd:string" />
+        <xsd:attribute name="Value" type="xsd:string" />
+      </xsd:complexType>
+      <xsd:complexType name="Address">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="RoadNumber" type="WL5G3N3:RoadNumber" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Road" type="WL5G3N3:Road" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="SiteName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Unit" type="WL5G3N3:Unit" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Level" type="WL5G3N3:Level" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Locality" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="State" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Postcode" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RoadNumber">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="First" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Last" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Road">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="TypeCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Suffix" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Unit">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="TypeCode" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Number" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Level">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="TypeCode" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Number" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Parcel">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Lot" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Plan" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LocalGovernmentArea">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Geocode">
+        <xsd:attribute name="TypeCode" type="xsd:string" />
+        <xsd:attribute name="Latitude" type="xsd:double" use="required" />
+        <xsd:attribute name="Longitude" type="xsd:double" use="required" />
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfAddress">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Address" nillable="true" type="WL5G3N3:Address" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ValidateLotPlan">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="request" type="WL5G3N3:ValidateLotPlanRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ValidateLotPlanRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="WL5G3N3:Request">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" maxOccurs="1" name="LotNumber" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="PlanNumber" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ValidateLotPlanResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="ValidateLotPlanResult" type="WL5G3N3:ValidateLotPlanResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ValidateLotPlanResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="WL5G3N3:Response" />
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ParseAddress">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="request" type="WL5G3N3:ParseAddressRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ParseAddressRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="WL5G3N3:Request">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" maxOccurs="1" name="AddressString" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ParseAddressResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="ParseAddressResult" type="WL5G3N3:ParseAddressResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ParseAddressResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="WL5G3N3:Response" />
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ValidateCoordinates">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="request" type="WL5G3N3:ValidateCoordinatesRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ValidateCoordinatesRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="WL5G3N3:Request">
+            <xsd:sequence>
+              <xsd:element minOccurs="1" maxOccurs="1" name="Latitude" type="xsd:double" />
+              <xsd:element minOccurs="1" maxOccurs="1" name="Longitude" type="xsd:double" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ValidateCoordinatesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="ValidateCoordinatesResult" type="WL5G3N3:ValidateCoordinatesResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ValidateCoordinatesResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="WL5G3N3:Response" />
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="AutoCompleteAddress">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="request" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AutoCompleteAddressResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="AutoCompleteAddressResult" type="WL5G3N3:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfString">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xs:schema>
+  </WL5G3N1:types>
+  <WL5G3N1:message name="PLSPlus_ValidateAddress_InputMessage">
+    <WL5G3N1:part name="parameters" element="WL5G3N2:ValidateAddress" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="PLSPlus_ValidateAddress_OutputMessage">
+    <WL5G3N1:part name="parameters" element="WL5G3N2:ValidateAddressResponse" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="PLSPlus_ValidateLotPlan_InputMessage">
+    <WL5G3N1:part name="parameters" element="WL5G3N2:ValidateLotPlan" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="PLSPlus_ValidateLotPlan_OutputMessage">
+    <WL5G3N1:part name="parameters" element="WL5G3N2:ValidateLotPlanResponse" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="PLSPlus_ParseAddress_InputMessage">
+    <WL5G3N1:part name="parameters" element="WL5G3N2:ParseAddress" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="PLSPlus_ParseAddress_OutputMessage">
+    <WL5G3N1:part name="parameters" element="WL5G3N2:ParseAddressResponse" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="PLSPlus_ValidateCoordinates_InputMessage">
+    <WL5G3N1:part name="parameters" element="WL5G3N2:ValidateCoordinates" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="PLSPlus_ValidateCoordinates_OutputMessage">
+    <WL5G3N1:part name="parameters" element="WL5G3N2:ValidateCoordinatesResponse" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="PLSPlus_AutoCompleteAddress_InputMessage">
+    <WL5G3N1:part name="parameters" element="WL5G3N2:AutoCompleteAddress" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="PLSPlus_AutoCompleteAddress_OutputMessage">
+    <WL5G3N1:part name="parameters" element="WL5G3N2:AutoCompleteAddressResponse" />
+  </WL5G3N1:message>
+  <WL5G3N1:portType name="PLSp-QG">
+    <WL5G3N1:operation name="ValidateAddress">
+      <WL5G3N1:input WL5G3N3:Action="ValidateAddress" message="WL5G3N2:PLSPlus_ValidateAddress_InputMessage" />
+      <WL5G3N1:output WL5G3N3:Action="ValidateAddressResponse" message="WL5G3N2:PLSPlus_ValidateAddress_OutputMessage" />
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="ValidateLotPlan">
+      <WL5G3N1:input WL5G3N3:Action="ValidateLotPlan" message="WL5G3N2:PLSPlus_ValidateLotPlan_InputMessage" />
+      <WL5G3N1:output WL5G3N3:Action="ValidateLotPlanResponse" message="WL5G3N2:PLSPlus_ValidateLotPlan_OutputMessage" />
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="ParseAddress">
+      <WL5G3N1:input WL5G3N3:Action="ParseAddress" message="WL5G3N2:PLSPlus_ParseAddress_InputMessage" />
+      <WL5G3N1:output WL5G3N3:Action="ParseAddressResponse" message="WL5G3N2:PLSPlus_ParseAddress_OutputMessage" />
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="ValidateCoordinates">
+      <WL5G3N1:input WL5G3N3:Action="ValidateCoordinates" message="WL5G3N2:PLSPlus_ValidateCoordinates_InputMessage" />
+      <WL5G3N1:output WL5G3N3:Action="ValidateCoordinatesResponse" message="WL5G3N2:PLSPlus_ValidateCoordinates_OutputMessage" />
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="AutoCompleteAddress">
+      <WL5G3N1:input WL5G3N3:Action="AutoCompleteAddress" message="WL5G3N2:PLSPlus_AutoCompleteAddress_InputMessage" />
+      <WL5G3N1:output WL5G3N3:Action="information.qld.gov.au/service/Addressing/ValidationService/PLSplus/soap/PLSPlus/AutoCompleteAddressResponse" message="WL5G3N2:PLSPlus_AutoCompleteAddress_OutputMessage" />
+    </WL5G3N1:operation>
+  </WL5G3N1:portType>
+  <WL5G3N1:binding name="PLSp-QG" type="WL5G3N2:PLSp-QG">
+    <WL5G3N4:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <WL5G3N1:operation name="ValidateAddress">
+      <WL5G3N4:operation soapAction="ValidateAddress" style="document" />
+      <WL5G3N1:input>
+        <wsp:Policy>
+          <wsp:PolicyReference URI="#service.land.property.2.wspolicy.UNT.1" />
+        </wsp:Policy>
+        <WL5G3N4:body use="literal" />
+      </WL5G3N1:input>
+      <WL5G3N1:output>
+        <WL5G3N4:body use="literal" />
+      </WL5G3N1:output>
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="ValidateLotPlan">
+      <WL5G3N4:operation soapAction="ValidateLotPlan" style="document" />
+      <WL5G3N1:input>
+        <wsp:Policy>
+          <wsp:PolicyReference URI="#service.land.property.2.wspolicy.UNT.1" />
+        </wsp:Policy>
+        <WL5G3N4:body use="literal" />
+      </WL5G3N1:input>
+      <WL5G3N1:output>
+        <WL5G3N4:body use="literal" />
+      </WL5G3N1:output>
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="ParseAddress">
+      <WL5G3N4:operation soapAction="ParseAddress" style="document" />
+      <WL5G3N1:input>
+        <wsp:Policy>
+          <wsp:PolicyReference URI="#service.land.property.2.wspolicy.UNT.1" />
+        </wsp:Policy>
+        <WL5G3N4:body use="literal" />
+      </WL5G3N1:input>
+      <WL5G3N1:output>
+        <WL5G3N4:body use="literal" />
+      </WL5G3N1:output>
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="ValidateCoordinates">
+      <WL5G3N4:operation soapAction="ValidateCoordinates" style="document" />
+      <WL5G3N1:input>
+        <wsp:Policy>
+          <wsp:PolicyReference URI="#service.land.property.2.wspolicy.UNT.1" />
+        </wsp:Policy>
+        <WL5G3N4:body use="literal" />
+      </WL5G3N1:input>
+      <WL5G3N1:output>
+        <WL5G3N4:body use="literal" />
+      </WL5G3N1:output>
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="AutoCompleteAddress">
+      <WL5G3N4:operation soapAction="AutoCompleteAddress" style="document" />
+      <WL5G3N1:input>
+        <wsp:Policy>
+          <wsp:PolicyReference URI="#service.land.property.2.wspolicy.UNT.1" />
+        </wsp:Policy>
+        <WL5G3N4:body use="literal" />
+      </WL5G3N1:input>
+      <WL5G3N1:output>
+        <WL5G3N4:body use="literal" />
+      </WL5G3N1:output>
+    </WL5G3N1:operation>
+  </WL5G3N1:binding>
+  <WL5G3N1:service name="ValidationService">
+    <WL5G3N1:port name="PLSp-QG" binding="WL5G3N2:PLSp-QG">
+      <WL5G3N4:address location="https://information.qld.gov.au/service/Addressing/ValidationService/PLSplusQG/soap" />
+    </WL5G3N1:port>
+  </WL5G3N1:service>
+</WL5G3N1:definitions>
