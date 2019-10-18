@@ -74,8 +74,8 @@ namespace MapInfoSoap
         {
 
 
-            string username = "plspQ_SAMSinfo";
-            string password = "SEce37f1c";
+            string username = "xxxxxxxxxx";
+            string password = "xxxxxxxxxx";
                                                 
             // Construct request
             var uri = new Uri("https://information.qld.gov.au/service/Addressing/ValidationService/PLSplusQG/soap"); //endpoint
